@@ -71,7 +71,7 @@ int main(void)
     for(row_iterator = 0; row_iterator < rows; row_iterator++)
     {
         /* special condition for the tip */
-        if(row_iterator == 0)
+        if(0 == row_iterator)
         {
             printf("*\n");
         }
@@ -98,7 +98,7 @@ int main(void)
     for(row_iterator = rows; row_iterator > 0; row_iterator--)
     {
         /* special condition for the tip */
-        if(row_iterator == 1)
+        if(1 == row_iterator)
         {
             printf("*\n");
         }
@@ -126,7 +126,7 @@ int main(void)
     for(row_iterator = rows; row_iterator > 0; row_iterator--)
     {
         /* special condition for the tip */
-        if(row_iterator == 1)
+        if(1 == row_iterator)
         {
             printf("*\n");
         }
@@ -154,8 +154,8 @@ int main(void)
                  * perimeter of the triangle to print an asterisk; otherwise, it
                  * prints an empty space.
                  */
-                if((column_iterator == 0) ||
-		(column_iterator == row_iterator - 1))
+                if((0 == column_iterator) ||
+		(column_iterator == (row_iterator - 1)))
                 {
                     printf("*");
                 }
@@ -177,7 +177,7 @@ int main(void)
     for(row_iterator = rows; row_iterator > 0; row_iterator--)
     {
         /* special condition for the tip*/
-        if(row_iterator == 1)
+        if(1 == row_iterator)
         {
             printf(" *\n");
 
@@ -223,7 +223,7 @@ int main(void)
     for(row_iterator = rows; row_iterator > 0; row_iterator--)
     {
         /* Special condition for the base */
-        if(row_iterator == 1)
+        if(1 == row_iterator)
         {
             for(column_iterator = 0; column_iterator < rows; column_iterator++)
             {
@@ -264,7 +264,7 @@ int main(void)
     for(row_iterator = rows; row_iterator > 0; row_iterator--)
     {
         /* special condition for the base */
-        if(row_iterator == 1)
+        if(1 == row_iterator)
         {
 
             for(column_iterator = 0; column_iterator < rows; column_iterator++)
@@ -278,7 +278,8 @@ int main(void)
         else if(row_iterator == rows)
         {
             /* this loop prints the indentation for the tip */
-            for(column_iterator = 0; column_iterator <= (row_iterator - 2); column_iterator++)
+            for(column_iterator = 0; column_iterator <= (row_iterator - 2);
+             column_iterator++)
             {
                 printf("  ");
             }
