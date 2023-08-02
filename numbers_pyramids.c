@@ -323,7 +323,6 @@ int main(void)
             }
             printf("\n");
         }
-
         /* special condition for the tip */
         else if(1 == row_iterator)
         {
@@ -373,10 +372,41 @@ int main(void)
         current row */
     }
 
+	printf("\n===============================================================");
+    printf("\nThere goes your Symmetric Pyramid!\n\n");
 
+    /* This loop builds a symmetric pyramid */
+    for(row_iterator = 1; row_iterator <= rows; row_iterator++)
+    {
+		printf(" ");
+        /* this loop indents each row to the required space before printing
+         * the required number of digits equivalent to each row.
+         */
+        for(column_iterator = 1; column_iterator <= (rows - row_iterator);
+                column_iterator++)
+        {
+            printf("  ");
+        }
 
+        /* This loop builds the left half of the pyramid...
+         * The expression ((2 * row_iterator) - 1) represents the symmetry index
+         * for each row based on the order of that row (row_iterator).
+         */
+        for(column_iterator = row_iterator; column_iterator <= ((2 * row_iterator) - 1);
+                column_iterator++)
+        {
 
+            printf("%i ", column_iterator);
+        }
+		/* This loop builds the right half of the pyramid. */
+        for(column_iterator = 2 * (row_iterator - 1); column_iterator >= row_iterator;
+                column_iterator--)
+        {
+            printf("%i ", column_iterator);
+        }
 
+        printf("\n"); /* starts new row */
+    }
 
     return (0);
 }
@@ -392,5 +422,6 @@ int main(void)
  User             Date             Brief
  ******************************************************************************
  el7agri          30-Jul-2023      Created this file and its content.
+ el7agri          02-Aug-2023      added the code for the symmetric pyramid.
 
  */
